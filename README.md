@@ -1,5 +1,4 @@
-# ANCIS-Pytorch
-Attentive Neural Cell Instance Segmentation
+# Attentive Neural Cell Instance Segmentation
 
 Please  cite  this  article  as:  
 Jingru Yi,  Pengxiang Wu,  Menglin Jiang,  Qiaoying Huang, Daniel J. Hoeppner, Dimitris N. Metaxas, Attentive Neural Cell Instance Segmentation, Medical Image Analysis(2019), 
