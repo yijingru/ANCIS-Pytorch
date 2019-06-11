@@ -1,5 +1,5 @@
 # ANCIS-Pytorch
-[Attentive Neural Cell Instance Segmentation](https://www.sciencedirect.com/science/article/pii/S1361841518308442)
+[Attentive Neural Cell Instance Segmentation [Link]](https://www.sciencedirect.com/science/article/pii/S1361841518308442)
 
 Please cite the article in your publications if it helps your research:
 
@@ -20,7 +20,7 @@ Please cite the article in your publications if it helps your research:
 Neural cell instance segmentation, which aims at joint detection and segmentation of every neural cell in a microscopic image, is essential to many neuroscience applications. The challenge of this task involves cell adhesion, cell distortion, unclear cell contours, low-contrast cell protrusion structures, and background impurities. Consequently, current instance segmentation methods generally fall short of precision. In this paper, we propose an attentive instance segmentation method that accurately predicts the bounding box of each cell as well as its segmentation mask simultaneously. In particular, our method builds on a joint network that combines a single shot multi-box detector (SSD) and a U-net. Furthermore, we employ the attention mechanism in both detection and segmentation modules to focus the model on the useful features. The proposed method is validated on a dataset of neural cell microscopic images. Experimental results demonstrate that our approach can accurately detect and segment neural cell instances at a fast speed, comparing favorably with the state-of-the-art methods.
 
 <p align="center">
-	<img src="imgs/fig1.png", width="300">
+	<img src="imgs/fig1.png", width="600">
 </p>
 
 
