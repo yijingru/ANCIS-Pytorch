@@ -1,18 +1,18 @@
 # ANCIS-Pytorch
 [Attentive Neural Cell Instance Segmentation](https://www.sciencedirect.com/science/article/pii/S1361841518308442)
 
-Please cite the article in your publications if it helps your research 
-	@article{YI2019228,
-		title = "Attentive neural cell instance segmentation",
-		journal = "Medical Image Analysis",
-		volume = "55",
-		pages = "228 - 240",
-		year = "2019",
-		issn = "1361-8415",
-		doi = "https://doi.org/10.1016/j.media.2019.05.004",
-		url = "http://www.sciencedirect.com/science/article/pii/S1361841518308442",
-		author = "Jingru Yi and Pengxiang Wu and Menglin Jiang and Qiaoying Huang and Daniel J. Hoeppner and Dimitris N. Metaxas"
-	}
+Please  cite  this  article  as:  
+@article{YI2019228,
+title = "Attentive neural cell instance segmentation",
+journal = "Medical Image Analysis",
+volume = "55",
+pages = "228 - 240",
+year = "2019",
+issn = "1361-8415",
+doi = "https://doi.org/10.1016/j.media.2019.05.004",
+url = "http://www.sciencedirect.com/science/article/pii/S1361841518308442",
+author = "Jingru Yi and Pengxiang Wu and Menglin Jiang and Qiaoying Huang and Daniel J. Hoeppner and Dimitris N. Metaxas"
+}
 
 
 # Introduction
