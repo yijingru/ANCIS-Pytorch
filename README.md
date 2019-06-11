@@ -1,7 +1,7 @@
 # ANCIS-Pytorch
 [Attentive Neural Cell Instance Segmentation [Link]](https://www.sciencedirect.com/science/article/pii/S1361841518308442)
 
-cPlease cite the article in your publications if it helps your research:
+Please cite the article in your publications if it helps your research:
 
 	@article{YI2019228,
 		title = "Attentive neural cell instance segmentation",
