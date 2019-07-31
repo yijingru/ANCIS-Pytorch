@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdec25de-3ee1-4efc-97c5-77eb22b23bc4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ANCIS-Pytorch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ANCIS-Pytorch.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dec_utils/dec_dataset_kaggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/dec_utils/dec_dataset_kaggle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seg_utils/seg_dataset_kaggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/seg_utils/seg_dataset_kaggle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_dec_kaggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_dec_kaggle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_seg_kaggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_seg_kaggle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_dec_kaggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_dec_kaggle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_seg_kaggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_seg_kaggle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eval_dec_kaggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/eval_dec_kaggle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eval_seg_kaggle.py" beforeDir="false" afterPath="$PROJECT_DIR$/eval_seg_kaggle.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_seg_kaggle.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/eval_dec_kaggle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="72" column="54" selection-start-line="72" selection-start-column="49" selection-end-line="72" selection-end-column="54" />
+            <state relative-caret-position="580">
+              <caret line="47" selection-start-line="47" selection-end-line="47" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -33,24 +27,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/seg_utils/seg_dataset_kaggle.py">
+        <entry file="file://$PROJECT_DIR$/eval_seg_kaggle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="43" column="67" selection-start-line="43" selection-start-column="67" selection-end-line="43" selection-end-column="67" />
+            <state relative-caret-position="800">
+              <caret line="49" column="35" lean-forward="true" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
               <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dec_utils/dec_dataset_kaggle.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="41" column="67" selection-start-line="41" selection-start-column="67" selection-end-line="41" selection-end-column="67" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,7 +41,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_dec_kaggle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
+            <state relative-caret-position="340">
               <caret line="23" selection-start-line="23" selection-end-line="33" selection-end-column="20" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -84,6 +66,8 @@
         <option value="$PROJECT_DIR$/test_seg_kaggle.py" />
         <option value="$PROJECT_DIR$/seg_utils/seg_dataset_kaggle.py" />
         <option value="$PROJECT_DIR$/dec_utils/dec_dataset_kaggle.py" />
+        <option value="$PROJECT_DIR$/eval_seg_kaggle.py" />
+        <option value="$PROJECT_DIR$/eval_dec_kaggle.py" />
       </list>
     </option>
   </component>
@@ -114,11 +98,6 @@
             <path>
               <item name="ANCIS-Pytorch" type="b2602c69:ProjectViewProjectNode" />
               <item name="ANCIS-Pytorch" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ANCIS-Pytorch" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ANCIS-Pytorch" type="462c0819:PsiDirectoryNode" />
-              <item name="dec_utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -254,29 +233,11 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test_seg.py" />
-    <entry file="file://$PROJECT_DIR$/eval_dec_kaggle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1242">
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dec_utils/dec_eval.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2726">
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eval_seg_kaggle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-422">
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -329,26 +290,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_dec_kaggle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="23" selection-start-line="23" selection-end-line="33" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_seg_kaggle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="72" column="54" selection-start-line="72" selection-start-column="49" selection-end-line="72" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/seg_utils/seg_dataset_kaggle.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -365,6 +306,46 @@
           <caret line="41" column="67" selection-start-line="41" selection-start-column="67" selection-end-line="41" selection-end-column="67" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_seg_kaggle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="69" column="22" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_dec_kaggle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="23" selection-start-line="23" selection-end-line="33" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eval_seg_kaggle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="49" column="35" lean-forward="true" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eval_dec_kaggle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

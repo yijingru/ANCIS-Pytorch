@@ -21,6 +21,17 @@ parser.add_argument('--nms_thresh', default=0.3, type=float, help='nms threshold
 parser.add_argument('--resume', default="dec_weights/kaggle/end_model.pth", type=str, help='resume weights directory')
 parser.add_argument('--cacheDir', default="cache", type=str, help='resume weights directory')
 
+def load_dec_weights(dec_model, dec_weights):
+    print('Resuming detection weights from {} ...'.format(dec_weights))
+    dec_dict = torch.load(dec_weights)
+    dec_dict_update = {}
+    for k in dec_dict:
+        if k.startswith('module') and not k.startswith('module_list'):
+            dec_dict_update[k[7:]] = dec_dict[k]
+        else:
+            dec_dict_update[k] = dec_dict[k]
+    dec_model.load_state_dict(dec_dict_update, strict=True)
+    return dec_model
 
 def evaluation(args):
 
@@ -33,14 +44,7 @@ def evaluation(args):
 
 
     model = dec_net.resnetssd50(pretrained=True, num_classes=args.num_classes)
-    print('Resuming training weights from {} ...'.format(args.resume))
-    pretrained_dict = torch.load(args.resume)
-    model_dict = model.state_dict()
-    trained_dict = {k[7:]: v for k, v in pretrained_dict.items()}
-    model_dict.update(trained_dict)
-    model.load_state_dict(model_dict)
-
-
+    model = load_dec_weights(model, args.resume)
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
     model.eval()

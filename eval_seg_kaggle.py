@@ -25,14 +25,23 @@ parser.add_argument('--seg_thresh', default=0.5, type=float, help='segmentation 
 parser.add_argument('--dec_weights', default="dec_weights/kaggle/end_model.pth", type=str, help='detection weights')
 parser.add_argument('--seg_weights', default="seg_weights/kaggle/end_model.pth", type=str, help='segmentation weights')
 
+def load_dec_weights(dec_model, dec_weights):
+    print('Resuming detection weights from {} ...'.format(dec_weights))
+    dec_dict = torch.load(dec_weights)
+    dec_dict_update = {}
+    for k in dec_dict:
+        if k.startswith('module') and not k.startswith('module_list'):
+            dec_dict_update[k[7:]] = dec_dict[k]
+        else:
+            dec_dict_update[k] = dec_dict[k]
+    dec_model.load_state_dict(dec_dict_update, strict=True)
+    return dec_model
 
 def evaluation(args):
     #-----------------load detection model -------------------------
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     dec_model = dec_net_seg.resnetssd50(pretrained=False, num_classes=args.num_classes)
-    resume_dict = torch.load(args.dec_weights)
-    resume_dict = {k[7:]: v for k, v in resume_dict.items()}
-    dec_model.load_state_dict(resume_dict)
+    dec_model = load_dec_weights(dec_model, args.dec_weights)
     dec_model = dec_model.to(device)
     dec_model.eval()
     #-----------------load segmentation model -------------------------
