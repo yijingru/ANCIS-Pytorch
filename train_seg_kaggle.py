@@ -11,8 +11,8 @@ import cv2
 import os
 
 parser = argparse.ArgumentParser(description='Detection Training (MultiGPU)')
-parser.add_argument('--trainDir', default="/home/grace/PycharmProjects/DataSets/kaggle/train", type=str, help='training image directory')
-parser.add_argument('--valDir', default="/home/grace/PycharmProjects/DataSets/kaggle/val", type=str, help='validation image directory')
+parser.add_argument('--trainDir', default="/home/grace/PycharmProjects/Datasets/kaggle/train", type=str, help='training image directory')
+parser.add_argument('--valDir', default="/home/grace/PycharmProjects/Datasets/kaggle/val", type=str, help='validation image directory')
 parser.add_argument('--annoDir', default="data/root/mask", type=str, help='annotation image directory')
 parser.add_argument('--imgSuffix', default='.png', type=str, help='suffix of the input images')
 parser.add_argument('--annoSuffix', default='.png', type=str, help='suffix of the annotation images')
@@ -44,6 +44,20 @@ def collater(data):
         masks.append(sample[3])
     return torch.stack(imgs,0), bboxes, labels, masks
 
+
+def load_dec_weights(dec_model, dec_weights):
+    print('Resuming detection weights from {} ...'.format(dec_weights))
+    dec_dict = torch.load(dec_weights)
+    dec_dict_update = {}
+    for k in dec_dict:
+        if k.startswith('module') and not k.startswith('module_list'):
+            dec_dict_update[k[7:]] = dec_dict[k]
+        else:
+            dec_dict_update[k] = dec_dict[k]
+    dec_model.load_state_dict(dec_dict_update, strict=True)
+    return dec_model
+
+
 def train(args):
     if not os.path.exists(args.weightDst):
         os.mkdir(args.weightDst)
@@ -51,9 +65,7 @@ def train(args):
     #-----------------load detection model -------------------------
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     dec_model = dec_net_seg.resnetssd50(pretrained=False, num_classes=args.num_classes)
-    resume_dict = torch.load(args.dec_weights)
-    resume_dict = {k[7:]: v for k, v in resume_dict.items()}
-    dec_model.load_state_dict(resume_dict)
+    dec_model = load_dec_weights(dec_model, args.dec_weights)
     dec_model = dec_model.to(device)
     #-------------------------------------------------------------------
     dec_model.eval()        # detector set to 'evaluation' mode

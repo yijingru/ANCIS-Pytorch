@@ -8,7 +8,7 @@ from dec_utils import dec_transforms, dec_eval, dec_dataset_kaggle
 
 
 parser = argparse.ArgumentParser(description='Detection Training (MultiGPU)')
-parser.add_argument('--testDir', default="/home/grace/PycharmProjects/DataSets/kaggle/test", type=str, help='training image directory')
+parser.add_argument('--testDir', default="/home/grace/PycharmProjects/Datasets/kaggle/test", type=str, help='training image directory')
 parser.add_argument('--annoDir', default="data/root/mask", type=str, help='annotation image directory')
 parser.add_argument('--imgSuffix', default='.png', type=str, help='suffix of the input images')
 parser.add_argument('--annoSuffix', default='.png', type=str, help='suffix of the annotation images')
@@ -21,6 +21,18 @@ parser.add_argument('--nms_thresh', default=0.3, type=float, help='nms threshold
 parser.add_argument('--resume', default="dec_weights/kaggle/end_model.pth", type=str, help='resume weights directory')
 
 
+def load_dec_weights(dec_model, dec_weights):
+    print('Resuming detection weights from {} ...'.format(dec_weights))
+    dec_dict = torch.load(dec_weights)
+    dec_dict_update = {}
+    for k in dec_dict:
+        if k.startswith('module') and not k.startswith('module_list'):
+            dec_dict_update[k[7:]] = dec_dict[k]
+        else:
+            dec_dict_update[k] = dec_dict[k]
+    dec_model.load_state_dict(dec_dict_update, strict=True)
+    return dec_model
+
 def test(args):
 
     data_transforms = dec_transforms.Compose([dec_transforms.ConvertImgFloat(),
@@ -32,12 +44,7 @@ def test(args):
 
 
     model = dec_net.resnetssd50(pretrained=True, num_classes=args.num_classes)
-    print('Resuming training weights from {} ...'.format(args.resume))
-    pretrained_dict = torch.load(args.resume)
-    model_dict = model.state_dict()
-    trained_dict = {k[7:]: v for k, v in pretrained_dict.items()}
-    model_dict.update(trained_dict)
-    model.load_state_dict(model_dict)
+    model = load_dec_weights(model, args.resume)
 
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")

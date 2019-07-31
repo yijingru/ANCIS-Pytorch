@@ -62,10 +62,10 @@ def train(args):
                                        dec_transforms.ToTensor()])
     }
 
-    dsets = {'train': NucleiCell(args.trainDir, args.annoDir, data_transforms['train'],
-                                 imgSuffix=args.imgSuffix, annoSuffix=args.annoSuffix),
-             'val': NucleiCell(args.valDir, args.annoDir, data_transforms['val'],
-                                 imgSuffix=args.imgSuffix, annoSuffix=args.annoSuffix)}
+    dsets = {'train': dec_dataset_kaggle.NucleiCell(args.trainDir, args.annoDir, data_transforms['train'],
+                                                    imgSuffix=args.imgSuffix, annoSuffix=args.annoSuffix),
+             'val': dec_dataset_kaggle.NucleiCell(args.valDir, args.annoDir, data_transforms['val'],
+                                                  imgSuffix=args.imgSuffix, annoSuffix=args.annoSuffix)}
 
     dataloader = torch.utils.data.DataLoader(dsets['train'],
                                              batch_size = args.batch_size,

@@ -39,7 +39,7 @@ class NucleiCell(Dataset):
 
     def load_img_ids(self):
         img_files = [os.path.join(self.imgDirectory, x, "images", x+self.imgSuffix)
-                     for x in os.listdir(self.imgDirectory)]
+                     for x in sorted(os.listdir(self.imgDirectory))]
         return img_files
 
     def load_img(self, item):
