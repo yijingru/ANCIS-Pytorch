@@ -22,7 +22,9 @@ Neural cell instance segmentation, which aims at joint detection and segmentatio
 <p align="center">
 	<img src="imgs/fig1.png", width="700">
 </p>
-
+<p align="center">
+	<img src="imgs/fig2.png", width="700">
+</p>
 
 ## Dependencies
 Library: OpenCV-Python, PyTorch>0.4.0, Ubuntu 14.04
