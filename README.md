@@ -34,4 +34,4 @@ To accelerate the training process, we trained the detection and segmentation mo
 
 
 ## Pretrained Weights
-The pretrained weights on Kaggle dataset can be downloaded [here](https://drive.google.com/drive/folders/1sE04a62AHNBjq5f0Z-aaGz9RJ3Nv4nmV?usp=sharing). Note that the weights are trained on 402 training images from original 670 training dataset. We use 134 images for validation and 134 images for testing.
+The pretrained weights on Kaggle dataset can be downloaded [here](https://drive.google.com/open?id=1dLAF8mF1g_Oh8oOjVfhgPVLpd3SSyeUH). Note that the weights are trained on 402 training images from original 670 training dataset. We use 134 images for validation and 134 images for testing.
